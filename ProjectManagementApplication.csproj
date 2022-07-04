@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>aspnet-ProjectManagementApplication-0A0A4BC5-1A17-40CA-B5F9-A1312DD0CC9E</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\Class.cs" />
+    <Compile Remove="Views\UserStory\AddNewUserStory.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\UserStory\AddNewUserStory.cshtml" />
+    <Content Remove="wwwroot\css\AddUserStory.html" />
+    <Content Remove="wwwroot\css\css.css" />
+    <Content Remove="wwwroot\css\StyleSheet.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Views\UserStory\AddUserStory.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.12" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.12" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.12" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\Shared\_LayoutLogin.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
