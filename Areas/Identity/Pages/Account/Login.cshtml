@@ -1,0 +1,59 @@
+﻿@page
+@model LoginModel
+
+
+<link rel="stylesheet" href="~/css/Login.css" />
+
+<h1>@ViewData["Title"]</h1>
+
+<section>
+    <div>
+        <div class="box">
+           <h1 class="headline">Login</h1>
+
+           <img src="~/pictures/SSI_Schäfer_Logo.png" width="40%" class="loginPic"/>
+
+
+            <hr style="border: 3px solid black"/>
+
+            <form id="account" method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <p class="logLable">Username</p>
+                    <input asp-for="Input.UserName" class="form-control logInput" />
+                </div>
+                <div class="form-group">
+                    <p class="logLable">Passwort</p>
+                    <input asp-for="Input.Password" class="form-control logInput" />
+                </div>
+                <!--<div class="form-group">
+        <div class="checkbox">
+            <label asp-for="Input.RememberMe">
+                <input asp-for="Input.RememberMe" />
+                Html.DisplayNameFor(m => m.Input.RememberMe)
+            </label>
+        </div>
+    </div>-->
+                <div class="form-group">
+                    <button type="submit" class="btn btn-secondary btnLogIn">Login</button>
+                </div>
+                <!--<div class="form-group">
+        <p>
+            <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
+        </p>
+        <p>
+            <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
+        </p>
+        <p>
+            <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
+        </p>
+    </div>-->
+            </form>
+            </div>
+        </div>
+</section>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
