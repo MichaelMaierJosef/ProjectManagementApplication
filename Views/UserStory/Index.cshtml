@@ -1,0 +1,140 @@
+@model ProjectManagementApplication.Models.UserStory
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<link rel="stylesheet" href="~/css/UserStory.css" />
+<link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+<script type="text/javascript" src="~/js/story.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<body onload="loadTaskIndex()"></body>
+
+
+    <div>
+        <div id="projektname">
+            @ViewBag.currentProjectName
+        </div>
+    </div>
+
+    
+
+    <div>
+        <div id="borderButton">
+            <button class="bt" onclick="showDetailAdd()">Hinzufügen + </button>
+        </div>
+
+        <div class="scoll" id="userStory">
+            <ul id="listUl">
+                @{
+                    foreach (UserStory userstory in ViewBag.UserStorys)
+                    {
+                                <li id="dus0">
+                                    <div class="nameIcon">
+                                        <div class="usc" onclick="showDetailMore('@userstory.descriptionTitle', '@userstory.id', '@userstory.description', '@userstory.name',
+                                                                                    '@userstory.imageURLs', '@userstory.state', '@userstory.storyNumber')">
+                                            <div class="iconDiv">
+                                                <span style="font-size:30px;" class="material-icons-outlined">chevron_right</span>
+                                            </div>
+                                            <a class="usp">@userstory.name</a>
+                                        </div>
+                                    </div>
+                                    <form asp-action="ChangeStateUserStory" asp-route-id="@userstory.id" asp-route-userstory="@userstory" asp-route-pid="@ViewBag.currentProjectId" asp-route-pName="@ViewBag.currentProjectName">
+                                        <button type="submit" class="usState">
+                                            @if (userstory.state == 0)
+                                             {
+                                                 <div style="background-color:white"></div>
+                                             }
+                                             else if (userstory.state == 1)
+                                             {
+                                               <div style="background-color:red"></div>
+                                             }
+                                             else if (userstory.state == 2)
+                                             {
+                                                 <div style="background-color:green"></div>
+                                             }
+                                        </button>
+                                    </form>
+                                    <label class="control control--checkbox">
+                                        <input id="c0" type="checkbox" />
+                                        <div class="control__indicator"></div>
+                                    </label>
+                                    <form asp-action="DeleteStory" asp-route-id="@userstory.id" asp-route-pid="@ViewBag.currentProjectId" asp-route-pName="@ViewBag.currentProjectName" >
+                                        <button type="submit" class="deleteUS">
+                                            <span class="material-icons-outlined">delete</span>
+                                            <div class="deletCircle"></div>
+                                        </button>
+                                    </form>
+                                </li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+
+
+<div class="bg-modal">
+    <div class="modal-content">
+        <div onclick="hideDetail()" class="close">+</div>
+        <h3 id="usname"></h3>
+        <h3 id="anh"><span id="att" class="material-icons-outlined">attach_file</span>Anhang</h3>
+        <div id="imagecontainer">
+            <div id="1" class="anhang" ondragleave="dragLeave(1)" ondrop="dragDropped(1)" ondragover="dragEnter(1)">
+                <h3>Upload your Image</h3>
+                <div id="drag-area" class="drag-area">
+                    <div class="icon">
+                        <i class="fas fa-images"></i>
+                    </div>
+                    <span id="text" class="header">Drag & Drop</span></br>
+                    <span class="support">Supports: JPEG, JPG, PNG</span>
+                </div>
+            </div>
+        </div>
+        <form asp-action="CreateEditUserStory" asp-route-pid="@ViewBag.currentProjectId" asp-route-pName="@ViewBag.currentProjectName" method="post">
+            <div class="scoll" id="description">
+                <div id="descriptionCont">
+                    <input hidden id="storyId" type="text" asp-for="id" />
+                    <input hidden id="usnameInp" type="text" asp-for="name" />
+                    <input hidden id="storyState" type="text" asp-for="state" />
+                    <input hidden id="imgURLs" type="text" asp-for="imageURLs" />
+                    <input hidden id="storyNumber" type="text" asp-for="storyNumber" />
+                    <h3><span id="des" class="material-icons-outlined">post_add</span>Beschreibung</h3>
+                    <p id="descriptionP">
+                        <input asp-for="descriptionTitle" type="text" id="title">
+                        <textarea asp-for="description" id="userStoryContent" type="text"></textarea>
+                    </p>
+                </div>
+            </div>
+            <input type="submit" />
+        </form>
+    </div>
+</div>
+
+<div class="add-modal">
+    <div class="add-content">
+        <form asp-action="CreateEditUserStory" asp-route-pid="@ViewBag.currentProjectId" asp-route-pName="@ViewBag.currentProjectName" method="post">
+            <div class="allTags">
+                <input hidden asp-for="id" />
+                <input hidden asp-for="descriptionTitle" value="Titel:" />
+                <div onclick="hideDetailAdd()" class="close2">+</div>
+                <h2 id="addProjektTitle"></h2>
+                <h3>Titel: </h3>
+                <input asp-for="name" placeholder=" ... " type="text" />
+                <h3>Story Number: </h3>
+                <input asp-for="storyNumber" placeholder=" ... " type="number" />
+                <div id="addContainerDescription">
+                    <h3>Beschreibung: </h3>
+                    <textarea id="descriptionContent" asp-for="description" placeholder=" ... "></textarea>
+                </div>
+                <div class="vl"></div>
+            </div>
+            <button id="btnAddStory">Speichern</button>
+        </form>
+    </div>
+</div>
+
+
+<!--Tag for the URL of the image-->
+<p id="invIMGid" hidden></p>

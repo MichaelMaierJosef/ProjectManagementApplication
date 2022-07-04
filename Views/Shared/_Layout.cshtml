@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ProjectManagementApplication</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header style="margin-bottom: 5%;">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #EFE703 !important;">
+            <form asp-action="Index" asp-controller="Project">
+                <input type="image" class="brand" src="~/pictures/SSI_Schäfer_Logo.png" />
+            </form>
+            <div class="searchbar">
+                <input type="text" class="search_input" id="keyWordInput" onkeyup="filterlist()" type="text" name="" placeholder="Search...">
+            </div>
+            <a href="#" class="search_pic"><img src="~/pictures/Search-icon.png" style="width: 50px;"></a>
+            
+            <img src="~/pictures/User.png" style="width:4%; margin-left:43%" />
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!--<footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - ProjectManagementApplication - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>-->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

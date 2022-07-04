@@ -1,0 +1,46 @@
+﻿@model ProjectManagementApplication.Models.Project
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<link rel="stylesheet" href="~/css/projectlist-style.css" />
+<meta charset="utf-8" />
+
+
+<span id="projectHeader">Projekte</span>
+<button id="filterBtn">Filter</button>
+
+<div class="createEditActions">
+    <form>
+        <button class="lbCreateEdit">Projektname</button>
+    </form>
+
+    <form>
+        <button class="lbCreateEdit" id="lbDescription">Beschreibung</button>
+    </form>
+
+    <form asp-action="CreateEditProject" method="post">
+        <input hidden asp-for="id" placeholder="id" />
+
+        <div id="txtInputName">
+            <input class="txtCreateEditInput" asp-for="projectName" />
+        </div>
+
+        <div id="txtInputDescription">
+            <input class="txtCreateEditInput" asp-for="description" />
+        </div>
+
+        <div class="timeRadioButtons">
+            <input class="typeRadioButtons" asp-for="tense" id="active" type="radio" checked value="active" />
+            <label class="typeLabel" for="active">Aktuelles Projekt</label> <br />
+            <input class="typeRadioButtons" asp-for="tense" id="future" type="radio" value="future" />
+            <label class="typeLabel" for="future">Zuk�nftiges Projekt</label> <br />
+            <input class="typeRadioButtons" asp-for="tense" id="past" type="radio" value="past" />
+            <label class="typeLabel" for="past">Vergangenes Projekt</label> <br />
+        </div>
+
+        <button id="btnSave">Speichern</button>
+    </form>
+</div>

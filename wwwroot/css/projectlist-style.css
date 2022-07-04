@@ -1,0 +1,241 @@
+body {
+    background: #C9C9C9;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.collapsible {
+    background-color: #EFE407;
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+    border-radius: 10px;
+    border: solid black 2px;
+}
+
+    .active, .collapsible:hover {
+        color: red;
+    }
+
+    .collapsible:after {
+        content: '\25C0';
+        color: black;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+    }
+
+.active:after {
+    content: '\25C0';
+    transform: rotate(-90deg);
+}
+
+.content {
+    font-family: Arial;
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background: #C9C9C9;
+    width: 100%;
+}
+
+.projectlist {
+    cursor: pointer;
+    padding: 10px;
+    text-align: left;
+    font-size: 16px;
+    position: relative;
+    top: 25%;
+    color: black;
+}
+
+    .projectlist:hover {
+        color: red;
+        text-decoration: unset;
+    }
+
+.listContainer {
+    margin-top: 2.5%;
+    width: 69%;
+    margin-left: 31%;
+    padding: 18px;
+    border-radius: 10px;
+    border: solid #EFE407 4px;
+}
+
+.projectEditButton {
+    float: left;
+    margin-top: -16px;
+    margin-left: 550px;
+    border: none;
+    background-color: #EFE407;
+}
+
+.projectDeleteButton {
+    float: left;
+    margin-left: 600px;
+    margin-top: -26px;
+    border: none;
+    background-color: #EFE407;
+}
+
+.bermia {
+    list-style-type: none;
+    height: 50px;
+    margin-top: 5px;
+    background-color: #EFE407;
+    min-width: 400px;
+    color: black;
+    border-radius: 10px;
+    border: solid black 2px;
+}
+
+#projectHeader {
+    margin-top: 2.5%;
+    background-color: #EFE407;
+    float: left;
+    display: inline;
+    color: black;
+    padding: 16px;
+    width: 40%;
+    text-align: center;
+    font-size: 32px;
+    border-radius: 10px;
+    border: solid black 2px;
+}
+
+#filterBtn {
+    margin-top: 2.5%;
+    background-color: #EFE407;
+    color: black;
+    padding: 16px;
+    width: 20%;
+    margin-left: 40%;
+    text-align: center;
+    font-size: 32px;
+    border-radius: 10px;
+    border: solid black 2px;
+}
+
+.projectActions {
+    margin-top: 2.5%;
+    float: left;
+    padding: 18px;
+    border-radius: 10px;
+    border: solid #EFE407 4px;
+    width: 30%;
+}
+
+.createEditActions {
+    margin-top: 2.5%;
+    padding: 18px;
+    border-radius: 10px;
+    border: solid #EFE407 4px;
+    width: 100%;
+    height: 20em;
+}
+
+.lbCreateEdit {
+    font-family: Arial;
+    background-color: #EFE407;
+    color: black;
+    padding: 18px;
+    width: 20%;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 10px;
+    border: solid black 2px;
+}
+
+#lbDescription {
+    margin-top: 6%;
+}
+
+.txtCreateEditInput {
+    border-radius: 17px;
+    margin-top: -20px;
+    margin-left: 22%;
+    height: 46px;
+    width: 50%;
+    font-family: Arial;
+}
+
+#txtInputName {
+    margin-top: -11.01em;
+}
+
+
+#txtInputDescription {
+    margin-top: 8.93%;
+}
+
+.timeRadioButtons {
+    margin-left: 74%;
+    margin-top: -11.01em;
+}
+
+.typeLabel {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+}
+
+.btnActions {
+    font-family: Arial;
+    background-color: #EFE407;
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 10px;
+    border: solid black 2px;
+}
+
+#btnSave {
+    margin-top: 9%;
+    float: left;
+    padding: 18px;
+    border-radius: 10px;
+    width: 30%;
+    background-color: #EFE407;
+    font-size: 18px;
+    border: solid black 2px;
+}
+
+#btnCenter {
+    margin-top: 8.5%;
+    margin-bottom: 8.5%;
+}
+
+.radioProject {
+    display: none;
+}
+
+.radioProject + *::before {
+    content: "";
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 0.1rem;
+    border-color: black;
+ }
+
+    .radioProject:checked + *::before {
+        background: radial-gradient(teal 0%, teal 40%, transparent 50%, transparent);
+        border-color: teal;
+    }
+
+    .radioProject:checked + * {
+        color: teal;
+    }
+
+.radioLabel {
+    margin-left: 95%;
+    margin-top: -2.1rem;
+}
