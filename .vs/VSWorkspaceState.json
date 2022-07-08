@@ -1,16 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\Areas",
-    "\\bin",
-    "\\Controllers",
-    "\\obj\\Release",
-    "\\Views",
-    "\\Views\\Home",
-    "\\Views\\Project",
-    "\\Views\\Shared",
-    "\\Views\\UserStory"
+    ""
   ],
-  "SelectedNode": "\\Views\\Shared\\_LayoutLogin.cshtml",
+  "SelectedNode": "\\ProjectManagementApplication.sln",
   "PreviewInSolutionExplorer": false
 }
