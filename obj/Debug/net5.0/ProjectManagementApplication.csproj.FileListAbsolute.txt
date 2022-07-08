@@ -348,3 +348,6 @@ C:\Users\mimaier\source\repos\ProjectManagementApplication\obj\Debug\net5.0\refi
 C:\Users\mimaier\source\repos\ProjectManagementApplication\obj\Debug\net5.0\ProjectManagementApplication.pdb
 C:\Users\mimaier\source\repos\ProjectManagementApplication\obj\Debug\net5.0\ProjectManagementApplication.genruntimeconfig.cache
 C:\Users\mimaier\source\repos\ProjectManagementApplication\obj\Debug\net5.0\ref\ProjectManagementApplication.dll
+C:\bensi\Git\ProjectManagementApplication\obj\Debug\net5.0\ProjectManagementApplication.dll
+C:\bensi\Git\ProjectManagementApplication\obj\Debug\net5.0\refint\ProjectManagementApplication.dll
+C:\bensi\Git\ProjectManagementApplication\obj\Debug\net5.0\ProjectManagementApplication.pdb

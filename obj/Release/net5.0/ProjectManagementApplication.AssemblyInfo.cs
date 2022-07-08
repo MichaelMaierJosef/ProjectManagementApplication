@@ -11,6 +11,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap4")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-ProjectManagementApplication-0A0A4BC5-1A17-40CA-B5F9-A1312DD0CC9E")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProjectManagementApplication")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
