@@ -2,14 +2,17 @@
 using Microsoft.AspNetCore.Mvc;
 using ProjectManagementApplication.Data;
 using ProjectManagementApplication.Models;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Security.Claims;
+using Microsoft.EntityFrameworkCore;
 
 namespace ProjectManagementApplication.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize]
     public class ProjectController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -51,10 +54,19 @@ namespace ProjectManagementApplication.Controllers
             if (project.id == 0)
             {
                 _context.Projects.Add(project);
+                _context.SaveChanges();
+
+                int id = project.id;
+                var userID = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+                var ProjectUser = new ProjectUser(id, userID, 0);
+
+                _context.ProjectUsers.Add(ProjectUser);
             } else
             {
                 _context.Projects.Update(project);
             }
+
 
             _context.SaveChanges();
 
