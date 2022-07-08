@@ -1,12 +1,65 @@
-﻿@page
+@page
 @model LoginModel
+<!--
 
+<link rel="stylesheet" href="~/css/Login.css" />-->
 
-<link rel="stylesheet" href="~/css/Login.css" />
+<style>
+    #loginBox {
+        border: 4px solid #000000;
+        border-radius: 20px;
+        max-width: 30%;
+        max-height: 90%;
+    }
 
-<h1>@ViewData["Title"]</h1>
+    section {
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        height: 100%;
+        width: 100%;
+    }
+
+</style>
 
 <section>
+    <div class="h-100 mw-100 d-flex align-items-center justify-content-center">
+        <div class="align-items-center justify-content-center" id="loginBox">
+            <div class="mt-5 d-flex align-items-center justify-content-center">
+                <img src="~/pictures/SSI_Schäfer_Logo.png" alt="SSI Schäfer" width="90%" class="logoLogin" />
+            </div>
+            <div class="mt-5 mb-5 d-flex align-items-center justify-content-center">
+                <form>
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <i class="fas fa-user-alt trailing"></i>
+                        <input asp-for="Input.UserName" type="text" id="formUser" class="form-control form-control-lg form-icon-trailing" />
+                        <label class="form-label" for="formUser">Username</label>
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-outline mb-4">
+                        <i class="fas fa-key trailing"></i>
+                        <input asp-for="Input.Password" type="password" id="formPassword" class="form-control form-control-lg form-icon-trailing" />
+                        <label class="form-label" for="formPassword">Password</label>
+                    </div>
+
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <!-- Submit button -->
+                    <div class="mb-4 mt-4 d-grid gap-2 col-10 mx-auto">
+                         <button type="submit" class="btn btn-blue-gray-50 btn-lg btn-rounded">Login</button>
+                    </div>
+
+                    <div style="text-align:center">
+                        <a class="mt-2" href="Register">Registrieren?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!--
     <div>
         <div class="box">
            <h1 class="headline">Login</h1>
@@ -25,8 +78,8 @@
                 <div class="form-group">
                     <p class="logLable">Passwort</p>
                     <input asp-for="Input.Password" class="form-control logInput" />
-                </div>
-                <!--<div class="form-group">
+                </div>-->
+    <!--<div class="form-group">
         <div class="checkbox">
             <label asp-for="Input.RememberMe">
                 <input asp-for="Input.RememberMe" />
@@ -34,10 +87,11 @@
             </label>
         </div>
     </div>-->
+    <!--
                 <div class="form-group">
                     <button type="submit" class="btn btn-secondary btnLogIn">Login</button>
                 </div>
-                <!--<div class="form-group">
+                <div class="form-group">
         <p>
             <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
         </p>
@@ -47,13 +101,15 @@
         <p>
             <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
         </p>
-    </div>-->
+    </div>
             </form>
             </div>
         </div>
+        -->
 </section>
 
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
+
