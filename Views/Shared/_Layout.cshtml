@@ -17,7 +17,21 @@
                 <input type="text" class="search_input" id="keyWordInput" onkeyup="filterlist()" type="text" name="" placeholder="Search...">
             </div>
             <a href="#" class="search_pic"><img src="~/pictures/Search-icon.png" style="width: 50px;"></a>
-            
+            <script src="~/js/logoutPop.js"></script>
+            <button onclick="openWin()">Logout</button>
+            @{
+                <a style="align-content: end">Willkommen, <br>@User.Identity.Name!</a>
+                if (User.Identity.IsAuthenticated)
+                {
+                    <form id="logiout" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post" style="display: none">
+                        <button type="submit" class="nav-link btn btn-link text-dark">Click here to Logout</button>
+                    </form>
+                }
+                else
+                {
+                    <p>You have successfully logged out of the application.</p>
+                }
+            }
             <img src="~/pictures/User.png" style="width:4%; margin-left:43%" />
         </nav>
     </header>
