@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mwajand\\Source\\Repos\\MichaelMaierJosef\\ProjectManagementApplication\\ProjectManagementApplication.csproj": {}
+    "C:\\Users\\mimaier\\source\\repos\\ProjectManagementApplication\\ProjectManagementApplication.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mwajand\\Source\\Repos\\MichaelMaierJosef\\ProjectManagementApplication\\ProjectManagementApplication.csproj": {
+    "C:\\Users\\mimaier\\source\\repos\\ProjectManagementApplication\\ProjectManagementApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mwajand\\Source\\Repos\\MichaelMaierJosef\\ProjectManagementApplication\\ProjectManagementApplication.csproj",
+        "projectUniqueName": "C:\\Users\\mimaier\\source\\repos\\ProjectManagementApplication\\ProjectManagementApplication.csproj",
         "projectName": "ProjectManagementApplication",
-        "projectPath": "C:\\Users\\mwajand\\Source\\Repos\\MichaelMaierJosef\\ProjectManagementApplication\\ProjectManagementApplication.csproj",
-        "packagesPath": "C:\\Users\\mwajand\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mwajand\\Source\\Repos\\MichaelMaierJosef\\ProjectManagementApplication\\obj\\",
+        "projectPath": "C:\\Users\\mimaier\\source\\repos\\ProjectManagementApplication\\ProjectManagementApplication.csproj",
+        "packagesPath": "C:\\Users\\mimaier\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mimaier\\source\\repos\\ProjectManagementApplication\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mwajand\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mimaier\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
